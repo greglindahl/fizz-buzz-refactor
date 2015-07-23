@@ -1,7 +1,13 @@
 // Fizz-Buzz //
-
-var x = prompt("Please enter a number");
-var fbNum = parseInt(x);
+var fbNum = getNumber();
+console.log(fbNum instanceof Number);
+while (true) {
+	if (!isNaN(fbNum)) {
+		break;
+	} else {
+		fbNum = getNumber();
+	}
+}
 
 function fizzbuzz(max) {
   for ( var fbNum = 1; fbNum <= max; fbNum++ ) {
@@ -15,6 +21,12 @@ function fizzbuzz(max) {
 		$('html').append("<div>"+fbNum +"</div>");
 	}
   }
+}
+
+function getNumber() {
+	var fbNum = prompt("Please enter a number");
+	fbNum = Number(fbNum);
+	return fbNum;
 }
 
 fizzbuzz(fbNum);
